@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intruder Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .detection-item {
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Intruder Detection</h1>
+    {% for detection in detections %}
+    <div class="detection-item">
+        <h2>{{ detection.title }}</h2>
+        <p>{{ detection.text }}</p>
+        <img src="{{ detection.image.url }}" alt="{{ detection.title }}">
+    </div>
+    {% endfor %}
+</body>
+</html>

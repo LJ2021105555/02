@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intruder Detection</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Intruder Detection</h1>
+    {% for detection in detections %}
+        <div>
+            <h2>{{ detection.title }}</h2>
+            <p>{{ detection.text }}</p>
+            <img src="{{ detection.image.url }}" alt="{{ detection.title }}">
+            <p>{{ detection.created_at }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
